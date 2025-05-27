@@ -1,43 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import Navbar from './Compement/navbar';
 import Hero from './Compement/hero';
-import {useState,useEffect} from 'react';
-import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; 
+import Section1 from './Compement/section1';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import Gsapcorse from './Compement/sc';
+import Project from './Compement/project';
+import Mouse from './utils/mouseposition';
+import Believe from './Compement/believe';
+import Footer from './Compement/Fotter';
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
-  const [mousePosition,setmouseposition]=useState({x:0,y:0});
-useEffect(()=>{
-const mouseMove=e=>{
-  setmouseposition({
-    x: e.clientX,
-    y: e.clientY
-  })
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+ const [mouse,setmouse]=useState(false)
+  useEffect(() => {
+    
 
-}
-window.addEventListener("mousemove", mouseMove);
- return ()=>{
-  window.removeEventListener("mousemove",mouseMove);
- }
-})
+   
+    const smoother = ScrollSmoother.create({
+      wrapper: '#smootmain',
+      content: '#smootcontain', 
+      smooth:2, 
+    });
 
-const Variants={
-  default:{
-    x:mousePosition.x,
-    y:mousePosition.y
-  }
-}
+  
+  }, []);
 
 
 
 
   return (
-    <body className="bg-lightgray cursor-og">
-        <motion.div className="size-16 border-2 border-black/25  rounded-full fixed bg-transparent" variants={Variants} animate="default" />
-     <Navbar />
-     <Hero />
-    </body>
+    <div className="bg-lightgray  font-normal " id="smootmain">
+
+     <div id="smootcontain" className=''>
+    
+      <Navbar />
+      <Hero />
+      <Section1 />
+        <Project />
+        <Believe />
+        <Footer />
+ </div>
+    </div>
   );
 }
 
