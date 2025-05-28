@@ -266,3 +266,19 @@ transform: rotate(0.1deg);
 .logo svg {
   opacity: 0
 }
+
+
+
+
+.scroll-spacer {
+  height: 100vh;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+}
+
+.footer-wrapper {
+  margin-top: -100vh;
+}

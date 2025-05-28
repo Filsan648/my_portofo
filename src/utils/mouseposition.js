@@ -10,6 +10,7 @@ function Mouse({ variablbe }) {
         x: e.clientX,
         y: e.clientY,
       });
+      console.log(e.clientX);
     };
     
     

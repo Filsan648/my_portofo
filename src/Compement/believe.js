@@ -63,7 +63,7 @@ function Believe() {
   }, []);
 
   return (
-    <div className="relative smootmain" id="smootmain">
+    <div className="relative smootmain  z-20" id="smootmain">
       <div className="overflow-visible" id="smootcontain">
         <div className="smootcontain ">
         <section className="h-[10px] mt-96">

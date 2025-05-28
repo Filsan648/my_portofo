@@ -38,7 +38,8 @@ function App() {
     <div className="bg-lightgray  font-normal " id="smootmain">
 
      <div id="smootcontain" className=''>
-    
+     <Mouse variablbe={true} />
+     
       <Navbar />
       <Hero />
       <Section1 />
