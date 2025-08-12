@@ -51,7 +51,7 @@ function Hero() {
     <section className="h-screen flex flex-col justify-center items-center  relative  " id='part1'>
  
       <div className='absolute top-[10%]  text-xl'> Hi 👋,i am </div>
-      <div className='filsan'> FILSA  </div> 
+      <div className='filsan'> FILSAN  </div> 
 
       <div className="flex justify-between w-full mt-96 items-center opcit ">
         <div className="flex items-center gap-4">
