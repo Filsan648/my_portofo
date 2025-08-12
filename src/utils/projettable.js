@@ -1,4 +1,4 @@
-import { text } from "motion/react-client";
+
 import imff from  "../assets/default.png"
 import cimenterie from  "../assets/cimenterie.png"
 import meto from  "../assets/meto.png"
