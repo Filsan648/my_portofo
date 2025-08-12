@@ -1,59 +1,28 @@
-import { useEffect, useState } from 'react';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import projetTable from '../utils/projettable';
+
 import BouncyText from '../utils/bouncytext';
 import AI from  "../assets/ai_studio.png"
 import cimenterie from  "../assets/cimenterie.png"
 import meto from  "../assets/meto.png"
 import bulk from  "../assets/bulk.png"
 import stock from "../assets/stockk.png"
-import { motion } from "framer-motion";
-import Mouse from '../utils/mouseposition';
+
 import Calculatrice from '../assets/calcula.png'
 gsap.registerPlugin(ScrollTrigger);
 
 function Project() {
  const Images=["image1","image2","image3","image4","image5","image6"]
  
- const Texts=["text1","text2","text3","text4"]
 
- const [mousePosition, setMousePosition] = useState({
-        x: 0,
-        y: 0
-      });
+
+
       
     
     
-      useEffect(() => {
-        const mouseMove = e => {
-          setMousePosition({
-            x: e.clientX,
-            y: e.clientY
-          })
-        }
+
     
-        window.addEventListener("mousemove", mouseMove);
-    
-        return () => {
-          window.removeEventListener("mousemove", mouseMove);
-        }
-      }, []);
-    
-      const variants = {
-        default: {
-          x: mousePosition.x,
-          y: mousePosition.y ,
-        },
-        text: {
-          height: 150,
-          width: 150,
-          x: mousePosition.x - 75,
-          y: mousePosition.y - 75,
-          backgroundColor: "yellow",
-          mixBlendMode: "difference"
-        }
-      }
 const entermouse=(e,)=>{
  
   gsap.to("#text",

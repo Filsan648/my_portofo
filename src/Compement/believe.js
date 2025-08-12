@@ -79,9 +79,9 @@ function Believe() {
            
           </div>
           <div className=" flex flex-row justify-center items-center gap-40">
-              <img className="img1 w-48  " src={belevie_1} alt="image 1" />
-              <img className="img2 w-48" src={belevie_2} alt="image 2" />
-              <img className="img3 w-48" src={belevie_3} alt="image 3" />
+              <img className="img1 w-48 " src={belevie_1} alt=" belevie_1" />
+              <img className="img2 w-48" src={belevie_2} alt=" belevie_2" />
+              <img className="img3 w-48" src={belevie_3} alt="belevie_3 " />
             </div>
           <section className="h-[100px] mt-96">
           </section>

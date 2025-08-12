@@ -7,7 +7,7 @@ import photo from "../assets/my_photo.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 function Section1() {
-  const imgRef = useRef(null);
+
   const turbulenceRef = useRef(null);
   const timeline = useRef(null);
   const sectionRef = useRef(null);
@@ -74,23 +74,9 @@ function Section1() {
  
   []);
 
-  const handleHover = () => {
-    gsap.to(".about",
-      {
-   
+  
 
-      }
-     )
-    
-  };
-
-  const handleHoverEnd = () => {
-    gsap.to(".about",
-      {
-    backgroundColor:"#D9D9D9"
-      }
-     )
-  };
+ 
 
 
 
