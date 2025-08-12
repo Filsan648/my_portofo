@@ -104,15 +104,20 @@ function Section1() {
       <div className="flex flex-col ml-9 text-4xl w-[50%] ">
       <h2 className="   marko-one-regular text-black/60  text-2xl">
         <span id="Filsan" className=" font-extrabold mb-40"> </span> <br/> <br/> 
-        <span className="mt-40 ">a software developer</span> <br/>
-        <div className="flex flex-row justify-start text-sm "> <div className="size-2 bg-green-300 rounded-full"></div>Avaible for work</div>
+        <span className="mt-40 ">a solver problems</span> <br/>
+        
 
         </h2>
-        <p className=" text-gray-800 max-w-xl text-2xl mt-32">
-          Solutions digitales sur mesure – pour PME, grands comptes et institutions.        <br/>
-          Parfait ! Si tu veux un fond de couleur bg-lightgray (gris clair) et un bruit 
-          en noir fusionné dessus, voici exactement comment le faire en SVG.
-        </p>
+     <p className="text-gray-800 max-w-xl text-xl mt-12">
+  Filsan Fouad Youssouf, a young developer based in the capital of Djibouti, holds a degree in Computer Science from the University of Djibouti and brings one year of professional experience.  
+  <br/><br/>
+  Passionate about coding and technology, with a strong drive to innovate and deliver solutions for real-world challenges.  
+  <br/><br/>
+ I work with various programming languages such as Python, JavaScript, and PHP. I am also a junior data analyst skilled in Python, capable of developing accurate machine learning models to make predictions.  <br/><br/>
+  Motivated, curious, and adaptable, thriving in dynamic team environments while constantly seeking opportunities to grow and innovate.
+</p>
+
+
       </div>
 
       
@@ -121,8 +126,8 @@ function Section1() {
      
 
         <img
-          ref={imgRef}
-          id="imgRef"
+         
+         
           src={photo}
           alt="profile"
           className="h-[100vh] scale-95 "

@@ -12,25 +12,22 @@ const [mouse ,setmouse]=useState([]);
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
     setmouse((prev) => [...prev, { x, y }]);
   };
  useEffect(()=>{
     mouse.forEach((pos, index)=> {
         const tl=gsap.timeline()
         tl.to(`#mouse-${index}`,
-            { delay:3,
-                duration:0.3,
-                backgroundColor:"blue",
-                x:5
+            { delay:1,
+              duration:0.3,
+              backgroundColor:"blue",
+              x:5
             }
-          
         )
         tl.to(`#mouse-${index}`,
             {   backgroundColor:"red",
                 y:5,
                 duration:2,
-           
             })
             
             tl.to(`#mouse-${index}`,
@@ -55,10 +52,15 @@ const [mouse ,setmouse]=useState([]);
           style={{ left: pos.x, top: pos.y }}
         />
       ))}
-     <div> <div className="marko-one-regular  text-9xl"> Let be a team  </div>
+     <div> <div className="marko-one-regular  text-9xl"> Contact Us  </div>
              <div>  filsanfouad2002@gmail.com   </div> </div>
+
+
+
+
           </div>
     )
 
 }
 export default Footer;
+

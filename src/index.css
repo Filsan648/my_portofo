@@ -282,3 +282,12 @@ footer {
 .footer-wrapper {
   margin-top: -100vh;
 }
+.cursor {
+    position: absolute;
+  z-index: 50;
+  background-color: #111;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;  
+}
+

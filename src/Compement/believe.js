@@ -70,9 +70,9 @@ function Believe() {
         </section>
           <div className="HEADING flex justify-center items-center">
           <div className="pin absolute marko-one-regular text-4xl text-center">
-  <div>I believe in</div>
-  <div className="text-9xl ">Noting is impossible </div>
-  <div>With coding</div>
+  <div>I am not a great programmer ,I am just</div>
+  <div className="text-9xl "> a god programmer with great habits </div>
+  <div className=" italic "> by Kent Beck</div>
 </div>
 
 

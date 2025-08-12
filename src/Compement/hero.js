@@ -11,9 +11,8 @@ function Hero() {
       ".filsan",
       {
         fontSize: "20vw",   position:"absolute",
-        top:"2%", left:"15%",
-       fontFamily:"normal", color:"black", 
-       
+        left:"15%",
+       fontFamily:"normal",
       },
       {
         scrollTrigger: {
@@ -24,13 +23,13 @@ function Hero() {
           
      
         },
-        top: position.top ,
+        top: position.top -80 ,
         left: position.left ,
         ease: "none",
         fontSize:"4vw",
       
         fontFamily:"Marko One",
-        color:"#DC5F00",
+      
       }
     );
 
@@ -49,11 +48,11 @@ function Hero() {
     );
   }, []);
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-10  " id='part1'>
-      <div className="  flex flex-col gap-[10%]  ">
-      <div className=''> Hi am </div>
+    <section className="h-screen flex flex-col justify-center items-center  relative  " id='part1'>
+ 
+      <div className='absolute top-[10%]  text-xl'> Hi 👋,i am </div>
       <div className='filsan'> FILSAN  </div> 
- </div>
+
       <div className="flex justify-between w-full mt-96 items-center opcit ">
         <div className="flex items-center gap-4">
           <div className="scroll-icon">
@@ -65,8 +64,8 @@ function Hero() {
         </div>
 
         <div className="text-xl text-center">
-          Bringing brands to life through <br />
-          <span className="marko-one-regular">Creative web solutions</span>
+          SOFTWARE EGINNER <br />
+          <span className="marko-one-regular text-lg">Solver problems</span>
         </div>
 
         <div>Feature Project</div>

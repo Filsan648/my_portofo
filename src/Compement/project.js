@@ -1,121 +1,171 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import projetTable from '../utils/projettable';
 import BouncyText from '../utils/bouncytext';
-
+import AI from  "../assets/ai_studio.png"
+import cimenterie from  "../assets/cimenterie.png"
+import meto from  "../assets/meto.png"
+import bulk from  "../assets/bulk.png"
+import stock from "../assets/stockk.png"
+import { motion } from "framer-motion";
+import Mouse from '../utils/mouseposition';
+import Calculatrice from '../assets/calcula.png'
 gsap.registerPlugin(ScrollTrigger);
 
 function Project() {
-
+ const Images=["image1","image2","image3","image4","image5","image6"]
  
-  useEffect(() => {
+ const Texts=["text1","text2","text3","text4"]
 
-    const slides = gsap.utils.toArray('.slide');
-
-    const scrollTween= gsap.to(slides, {
-      xPercent: -100 * (slides.length - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#ProjetContainer',
-        pin: true,
-        scrub: 1,
-        end: () => `+=${window.innerWidth * slides.length}`,
-      },
-    });
-
-
-
-    projetTable.forEach((projet)=>{
-     gsap.to(`#image-${projet.id}`,
-       
-        {
-        scrollTrigger:{
-          trigger:`#image-${projet.id}`,
-          containerAnimation: scrollTween,
-          scrub:true,
+ const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0
+      });
       
-        },
-        x:100,
-        width:"50%",
     
+    
+      useEffect(() => {
+        const mouseMove = e => {
+          setMousePosition({
+            x: e.clientX,
+            y: e.clientY
+          })
         }
-      
-      )
-
-     gsap.fromTo(`#title-${projet.id}`,{
-      left:"30%"
-     },
-
-
-   {   scrollTrigger:{
-        trigger:`#title-${projet.id}`,
-        containerAnimation: scrollTween,
-        scrub:true,
     
-      },
-      left:"20%",
-      ease:"bounce"
-     }
-  
+        window.addEventListener("mousemove", mouseMove);
+    
+        return () => {
+          window.removeEventListener("mousemove", mouseMove);
+        }
+      }, []);
+    
+      const variants = {
+        default: {
+          x: mousePosition.x,
+          y: mousePosition.y ,
+        },
+        text: {
+          height: 150,
+          width: 150,
+          x: mousePosition.x - 75,
+          y: mousePosition.y - 75,
+          backgroundColor: "yellow",
+          mixBlendMode: "difference"
+        }
+      }
+const entermouse=(e,)=>{
+ 
+  gsap.to("#text",
+    {opacity:0}
+  )
+
+Images.forEach((image)=>{
+  gsap.to(`#${e}`,
+    {scale:1.1,
+    }
+
+  )
+
+  if(image !== e)
+  gsap.to(`#${image}`,
+{
       
+  filter: "blur(16px)", 
+  duration: 0.5
 
-     )
+}
 
+  )
+})
+}
 
+const leave=(e)=>{
+  gsap.to("#project",
+    {
+      backgroundColor:"#D9D9D9"
+    }
 
-    })
+  )
+  gsap.to("#text",
+    {opacity:1}
+  )
+  Images.forEach((image )=>{
+    gsap.to(`#${e}`,
+      {scale:1
 
-
-
-
-
-
-  }, []);
-
-
-
+      }
   
-
-
+    )
+    gsap.to(`#${image}`,
+  {
+    scale: 1,
+    filter:  "blur(0px)", 
+    duration: 0.5
+  
+  }
+  
+    )
+  })
+  }
+  
   return (
-    <div className="mt-72 relative rounded-br-lg" id="project">
-    <div className="text-center mb-16">
-      <BouncyText text="Featured Project" />
-    </div>
+     <div>
   
-    <div id="ProjetContainer" className="overflow-hidden h-screen relative">
-      <div id="Projet" className="flex w-max h-full">
-        {projetTable.map((projet) => (
-          <div
-            id={`section-${projet.id}`}
-            key={projet.id}
-            className=" slide flex-col h-screen w-screen flex   border-r gap-12 relative group"
-           
-          > 
-          <div className="max-w-xl flex  flex-col justify-center items-center ">
+    <div className="mt-24 px-4 relative" id='project' >
+
       
-              <h1
-                id={`title-${projet.id}`}
-                className="marko-one-regular text-6xl "
-              > {projet.title}
-              </h1>
-              <div className="mt-6 flex gap-6 text-sm text-black">
-              <div   className=" ">Live</div>
-              <div className=" ">Description</div>
-              <div className=" ">Github</div>
-              </div>
-            </div>
-            <div className=' h-96 relative'  id={`image-${projet.id}`}>
-            <div style={{ backgroundImage: `url(${projet.image})` }}  className='h-96 rounded-xl'>
-            </div>
-            </div>
-          </div>
-        ))}
+      <div>
+   
+      <div className="text-center mb-16">
+        <BouncyText text="Featured Project" />
+      </div>
+
+      <div className="">
+    
+  
+      <div className='flex flex-row justify-between ' >
+     
+      <div className='w-[450px] h-[500px]' >
+      <img src={AI} alt="immf" className='w-full h-full object-fill ' id='image1' onMouseLeave={()=>leave("image1")} onMouseEnter={()=>entermouse("image1")} />
+      <h1 className='text-2xl' id='text'>AI STUDIO - <a href='https://filsan648-ai-studio-main-615u6t.streamlit.app/' className='text-xl text-black/60' > Live demos </a> -<a href='https://github.com/Filsan648/AI-STUDIO-2' className='text-xl text-black/60'> Github</a>  </h1>
+      </div>
+
+      <div className='w-96 h-96'>
+      </div>
+      <div className='w-[700px] h-96' >
+      <img  className=' w-full h-full object-contain' src={cimenterie} alt="cimenterie" id='image2' onMouseLeave={()=>leave("image2")} onMouseEnter={()=>entermouse("image2")} /> 
+      <h1 className='text-2xl' id='text'>Cimenterie d'ali-sabieh -<a href='https://689ae70a876f339fc89e53ad--projectcim.netlify.app/' className='text-xl text-black/60' > Live demos </a> -<a href='https://github.com/Filsan648/CIMAS' className='text-xl text-black/60'> Github</a>  </h1>
+      </div>
+      </div>
+      <div>
+      <div className='flex flex-col justify-end items-end'  >
+      <img src={meto} alt="metea" id='image3' onMouseLeave={()=>leave("image3")} onMouseEnter={()=>entermouse("image3")} /> 
+      <h1 className='text-2xl' id='text'>Meteo APP -<a href='https://coruscating-dasik-073209.netlify.app/' className='text-xl text-black/60'> Live demos </a>  </h1>
+      </div>
+      <div className='flex flex-row justify-between '>
+      <div className='w-[400px] h-[500px]' >
+      <img src={bulk} alt='bulk' className='w-full h-full object-fill' id='image4' onMouseLeave={()=>leave("image4")} onMouseEnter={()=>entermouse("image4")}/>  
+      <h1 className='text-2xl' id='text'>Webreidge Application -<a href='https://github.com/Filsan648/Bulk' className='text-xl text-black/60'> Github</a>   </h1>
+      </div>
+      <div> </div>
+      <div className='w-[500px] h-[400px] m-12' >
+      <img src={stock} alt='stock' className='w-full h-full object-fill' id='image5' onMouseLeave={()=>leave("image5")} onMouseEnter={()=>entermouse("image5")}/>  
+      <h1 className='text-2xl' id='text'>Stock  Application -<a href='https://github.com/Filsan648/Stockapp' className='text-xl text-black/60'> Github</a>   </h1>
+      </div>
+      </div>
+      <div className='flex justify-center mt-10'>
+       <div className='w-[500px] h-[400px] m-12 ' >
+      <img src={Calculatrice} alt='stock' className='w-full h-full object-fill' id='image6' onMouseLeave={()=>leave("image6")} onMouseEnter={()=>entermouse("image6")}/>  
+      <h1 className='text-2xl' id='text'>Calculator-<a href='https://calculator-slzywu4sgqmhabjzxa48qg.streamlit.app/' className='text-xl text-black/60'> Live demos</a>-<a href='https://github.com/Filsan648/Calculator' className='text-xl text-black/60'> Github</a>    </h1>
+      </div>
+      </div>
+      </div>
+      </div>
+ 
       </div>
     </div>
-  </div>
-  
+    </div>
   );
 }
 

@@ -8,9 +8,10 @@ const  Projet=
        title:"Gsap project ",
        content:"Contenu du projet A",
        image:imff,
+       allignement:"top",
        Tools: [{
-      tool:"React",
-      color:"#3674B5"
+       tool:"React",
+       color:"#3674B5"
 
        },{
    tool:"laravel",
@@ -23,6 +24,8 @@ tool:"gsap",
        color:"#000000",
 
     } ,
+
+
     { id: 2,
         title:"Web site for a comenterie",
         content:"Contenu du projet b",
@@ -41,6 +44,8 @@ tool:"gsap",
           ],        color:"#EAE4D5",
 
      },
+
+
      { id: 3,
         title:"Meto project ",
         content:"Meto project ",
@@ -58,6 +63,8 @@ tool:"gsap",
           }
           ],        color:"#B6B09F",
      },
+
+
      { id: 4,
         title:"Webreidge Application",
         content:"Contenu du projet d",
@@ -73,7 +80,8 @@ tool:"gsap",
    tool:"gsap",
          color:"#8E1616"
           }
-          ],        color:"#F2F2F2",
+          ],    
+         color:"#F2F2F2",
      }
 
 ]

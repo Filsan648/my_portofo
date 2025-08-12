@@ -13,6 +13,7 @@ import Project from './Compement/project';
 import Mouse from './utils/mouseposition';
 import Believe from './Compement/believe';
 import Footer from './Compement/Fotter';
+import Skill from './Compement/Skills';
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
@@ -36,13 +37,12 @@ function App() {
 
   return (
     <div className="bg-lightgray  font-normal " id="smootmain">
-
-     <div id="smootcontain" className=''>
-     <Mouse variablbe={true} />
      
+     <div id="smootcontain" className=''>
       <Navbar />
-      <Hero />
-      <Section1 />
+       <Hero />
+       <Section1 />
+       <Skill />
         <Project />
         <Believe />
         <Footer />
