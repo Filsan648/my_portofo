@@ -17,8 +17,7 @@ import Skill from './Compement/Skills';
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
- const [mouse,setmouse]=useState(false)
+
   useEffect(() => {
     
 
